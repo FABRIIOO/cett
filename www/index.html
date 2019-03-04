@@ -362,10 +362,14 @@
           
        
       $(document).ready(function() {
+          
       $('#produto').css({'display':'none'});
             $.ajax({
                 url : "http://files.cetromaquinas.com.br/arquivos/php_app_vendas/request_app.php",
-                type : 'post', data : {"S":"SelectProduto" }
+                type : 'post',
+                data : {
+                    "S":"SelectProduto"
+                }
             }).done(function(msg){
              
                 var esportes = "";
@@ -380,7 +384,7 @@
 //                     source: complet
 //                 });
             }).fail(function(jqXHR, textStatus, msg){  
-                erro_net();
+//                 erro_net();
             });   
             
         
