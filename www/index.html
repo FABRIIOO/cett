@@ -363,6 +363,7 @@
           
        
         $(function() {
+            alert('iddo');
             // Swal.fire({ showConfirmButton: false,  html: '<h1>Buscando...</h1><br><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span>'});
             $('#produto').css({'display':'none'});
             $.ajax({
@@ -370,15 +371,15 @@
                 type : 'post', data : {"S":"SelectProduto" }
             }).done(function(msg){
                 alert(msg);
-                var esportes = "";
-                var prod = JSON.parse(msg);
-                var complet = '';
-                for (var i = 0; i<prod.length; i++) { 
-                    complet += prod[i].nome+',';   
-                }  
+//                 var esportes = "";
+//                 var prod = JSON.parse(msg);
+//                 var complet = '';
+//                 for (var i = 0; i<prod.length; i++) { 
+//                     complet += prod[i].nome+',';   
+//                 }  
                 
 //                 complet = complet.split(','); 
-                   alert(complet);
+//                    alert(complet);
 //                 $("#nome_prod").autocomplete({
 //                     source: complet
 //                 });
