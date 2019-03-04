@@ -381,6 +381,7 @@
                     // Swal.fire({ showConfirmButton: false,  html: '<h1>Buscando...</h1><br><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span>'});
                 }
              }).done(function(dados){ 
+               alert(dados);
                 var data = JSON.parse(dados);
                 if (data !== null) {
                     $('#inicio').css({'display':'none'});
