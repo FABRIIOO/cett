@@ -403,7 +403,7 @@
                     "nome" : nome
                 },
                 beforeSend : function(){
-                    Swal.fire({ showConfirmButton: false,  html: '<h1>Buscando...</h1><br><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span>'});
+                   //Swal.fire({ showConfirmButton: false,  html: '<h1>Buscando...</h1><br><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span>'});
                 }
              }).done(function(dados){ 
                 var data = JSON.parse(dados);
@@ -442,29 +442,29 @@
                                     document.getElementById('t').innerHTML = "";
                                  $('#h').html(""); //limpa html da loja
                                }).fail(function(jqXHR, textStatus, msg){
-                                erro_net();
+                                //erro_net();
                             });    
-                            swal.close();
+                            //swal.close();
                           }else {
-                                Swal.fire({
-                                    type: 'error',
-                                    title: 'Produto não encontrado!',
-                                    text: ''
-                                });
+//                                 Swal.fire({
+//                                     type: 'error',
+//                                     title: 'Produto não encontrado!',
+//                                     text: ''
+//                                 });
                             }
                         }).fail(function(jqXHR, textStatus, msg){
-                    erro_net();
+                   // erro_net();
                 }); 
             }
 
-            function erro_net () 
-            {
-                Swal.fire({
-                type: 'error',
-                title: 'conecte-se a uma rede!',
-                text: 'Você esta off-line'
-                });
-            }
+//             function erro_net () 
+//             {
+//                 Swal.fire({
+//                 type: 'error',
+//                 title: 'conecte-se a uma rede!',
+//                 text: 'Você esta off-line'
+//                 });
+//             }
         
         
         </script>
