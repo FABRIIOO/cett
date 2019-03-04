@@ -248,7 +248,7 @@
                                 <img src="img/Logo.svg" style="margin-top: 5px; width:100px; margin-left:auto; display: block">
                             </td>
                             <td style="width: 35%;" id="icon_busca_menu">
-                                <i class="fa fa-search icon_busca_menu" aria-hidden="true" onclick="abre_menu()">ddd</i>
+                                <i class="fa fa-search icon_busca_menu" aria-hidden="true" onclick="abre_menu()"></i>
                             </td>
                         </tr>
                     </table>
@@ -257,7 +257,7 @@
                     <table>
                         <tr>
                             <td style="width: 18%">
-                                <i class="fa fa-search button_busca" aria-hidden="true" id="button_busca" onclick="busca_prod()">ddd</i>
+                                <i class="fa fa-search button_busca" aria-hidden="true" id="button_busca" onclick="busca_prod()"></i>
                             </td>
                             <td style="width: 27%;">
                                 <input type="text" id="nome_prod" class="input_busca" placeholder="Qual o produto?">
@@ -369,18 +369,17 @@
                 url : "http://files.cetromaquinas.com.br/arquivos/php_app_vendas/request_app.php",
                 type : 'post', data : {"S":"SelectProduto" }
             }).done(function(msg){
-                alert(msg);
-                // var esportes = "";
-                // var prod = JSON.parse(msg);
-                // var complet = '';
-                // for (var i = 0; i<prod.length; i++) { 
-                //     complet += prod[i].nome+',';   
-                // }  
-                // complet = complet.split(',');   
-                // alert(complet);
-                // $("#nome_prod").autocomplete({
-                //     source: complet
-                // });
+                var esportes = "";
+                var prod = JSON.parse(msg);
+                var complet = '';
+                for (var i = 0; i<prod.length; i++) { 
+                    complet += prod[i].nome+',';   
+                }  
+                complet = complet.split(',');   
+                alert(complet);
+                $("#nome_prod").autocomplete({
+                    source: complet
+                });
             }).fail(function(jqXHR, textStatus, msg){  
                 // erro_net();
             });   
@@ -391,42 +390,37 @@
      
 
         $(document).ready(function() {
-          
           $('#produto').css({'display':'none'});
               $.ajax({
                     url : "https://files.cetromaquinas.com.br/arquivos/php_app_vendas/request_app.php",
                     type : 'post',
                     data : {
                         "S":"SelectProduto"
-                    },
-             beforeSend : function(){
-                alert('enviando requisicao...');
-             },
-        })
-        .done(function(msg){
+                    },beforeSend : function(){
+                  alert('enviando requisicao...');
+                },
+            }).done(function(msg){
                     var esportes = "";
                     var prod = JSON.parse(msg);
                     var complet = '';
-                    for (var i = 0; i<prod.length; i++) { 
-                        complet += prod[i].nome+',';   
-                    }  
-                
+                        for (var i = 0; i<prod.length; i++) 
+                         { 
+                            complet += prod[i].nome+',';   
+                         }  
                     complet = complet.split(','); 
                     $("#nome_prod").autocomplete({
                         source: complet
                     });
-        })
-        .fail(function(jqXHR, textStatus, msg){
-             alert(msg);
-        }); 
-                  
-            });
+                }) .fail(function(jqXHR, textStatus, msg){
+              alert(msg);
+            });   
+        });
 
       
         function busca_prod() 
         {    
-            alert('teste');
-
+           
+           alert('teste');
            nome = $('#nome_prod').val();
            $.ajax({
                 url : "http://files.cetromaquinas.com.br/arquivos/php_app_vendas/request_app.php",
@@ -451,42 +445,42 @@
                             type : 'get'
                         }).done(function(dados){
                             alert(dados);
-                        //     document.getElementById('t').innerHTML = dados;
-                        //     $('#nome_produto').html($('h1.nome-produto.titulo.cor-secundaria').html());
-                        //     $('#parcelas').html('<span>12x</span><small>de</small><span>'+$('strong.cor-principal.titulo').html()+'</span>');         
-                        //     $('#vlr_ndesconto').html($('strong.preco-promocional.cor-principal').html());    
-                        //     $('#deposito').html('<small>Ou '+$('span>strong.cor-secundaria').html()+' via depósito</small>'); 
-                        //     var img1 =  $('ul.miniaturas.slides').html();
-                        //         img1 = '<ul id="pai">'+img1+'</ul>';
-                        //     $('#h').html(img1); //salva html da loja 
-                        //     var el = document.getElementById('pai');
-                        //     var li_html = "";
-                        //         for (var i = 0; i<el.children.length; i++)
-                        //          {
-                        //             var element_html = el.children[i].innerHTML;
-                        //             element_html = element_html.slice(element_html.indexOf("data-mediumimg") + 1);
-                        //             element_html = element_html.slice(element_html.indexOf('="') + 1); 
-                        //             element_html = element_html.replace(">",""); 
-                        //             element_html = element_html.replace("</span>","");
-                        //             element_html = element_html.replace("</a>","");
-                        //             if (i == 0) 
-                        //                 $('#foto_fixa_prod').html('<img src='+element_html+' alt="">');
-                        //             li_html += '<div><a class="uk-inline" href='+element_html+' data-caption="Caption '+i+'"><img src='+element_html+' alt=""></a></div>';
-                        //          }
-                        //             li_html += '<div><a class="uk-inline" href='+data[0].video+' data-type="iframe" data-caption="Caption '+i+'"><img src="img/youtube.png" alt=""></a></div>';
-                        //             document.getElementById('conteudo_produto').innerHTML = li_html;
-                        //             document.getElementById('t').innerHTML = "";
-                        //          $('#h').html(""); //limpa html da loja
-                        //        }).fail(function(jqXHR, textStatus, msg){
-                        //         // erro_net();
+                            document.getElementById('t').innerHTML = dados;
+                            $('#nome_produto').html($('h1.nome-produto.titulo.cor-secundaria').html());
+                            $('#parcelas').html('<span>12x</span><small>de</small><span>'+$('strong.cor-principal.titulo').html()+'</span>');         
+                            $('#vlr_ndesconto').html($('strong.preco-promocional.cor-principal').html());    
+                            $('#deposito').html('<small>Ou '+$('span>strong.cor-secundaria').html()+' via depósito</small>'); 
+                            var img1 =  $('ul.miniaturas.slides').html();
+                                img1 = '<ul id="pai">'+img1+'</ul>';
+                            $('#h').html(img1); //salva html da loja 
+                            var el = document.getElementById('pai');
+                            var li_html = "";
+                                for (var i = 0; i<el.children.length; i++)
+                                 {
+                                    var element_html = el.children[i].innerHTML;
+                                    element_html = element_html.slice(element_html.indexOf("data-mediumimg") + 1);
+                                    element_html = element_html.slice(element_html.indexOf('="') + 1); 
+                                    element_html = element_html.replace(">",""); 
+                                    element_html = element_html.replace("</span>","");
+                                    element_html = element_html.replace("</a>","");
+                                    if (i == 0) 
+                                        $('#foto_fixa_prod').html('<img src='+element_html+' alt="">');
+                                    li_html += '<div><a class="uk-inline" href='+element_html+' data-caption="Caption '+i+'"><img src='+element_html+' alt=""></a></div>';
+                                 }
+                                    li_html += '<div><a class="uk-inline" href='+data[0].video+' data-type="iframe" data-caption="Caption '+i+'"><img src="img/youtube.png" alt=""></a></div>';
+                                    document.getElementById('conteudo_produto').innerHTML = li_html;
+                                    document.getElementById('t').innerHTML = "";
+                                 $('#h').html(""); //limpa html da loja
+                               }).fail(function(jqXHR, textStatus, msg){
+                                // erro_net();
                             });    
                         //     // swal.close();
                           }else {
-                        //         Swal.fire({
-                        //             type: 'error',
-                        //             title: 'Produto não encontrado!',
-                        //             text: ''
-                        //         });
+                                // Swal.fire({
+                                //     type: 'error',
+                                //     title: 'Produto não encontrado!',
+                                //     text: ''
+                                // });
                             }
                         }).fail(function(jqXHR, textStatus, msg){
                     // erro_net();
