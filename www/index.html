@@ -371,14 +371,14 @@
                     "S":"SelectProduto"
                 }
             }).done(function(msg){
-             
-                var esportes = "";
-                var prod = JSON.parse(msg);
-                var complet = '';
-                for (var i = 0; i<prod.length; i++) { 
-                    complet += prod[i].nome+',';   
-                }  
-                alert(complet);
+                   alert(msg);   
+//                 var esportes = "";
+//                 var prod = JSON.parse(msg);
+//                 var complet = '';
+//                 for (var i = 0; i<prod.length; i++) { 
+//                     complet += prod[i].nome+',';   
+//                 }  
+            
 //                 complet = complet.split(','); 
 //                 $("#nome_prod").autocomplete({
 //                     source: complet
