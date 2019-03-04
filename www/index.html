@@ -445,6 +445,7 @@
                                }).fail(function(jqXHR, textStatus, msg){
                                 UIkit.notification({message: 'Erro de conexão', status: 'danger'});
                             });    
+                            UIkit.notification.closeAll();
                           }else {
                             UIkit.notification({message: 'Produto não encontrado', status: 'danger'});
                             }
