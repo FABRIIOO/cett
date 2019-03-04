@@ -388,7 +388,7 @@
                         source: complet
                     });
                 }) .fail(function(jqXHR, textStatus, msg){
-                 erro_net();
+                    UIkit.notification({message: 'Erro de conexão', status: 'danger'});
             });   
         });
 
@@ -404,7 +404,7 @@
                     "nome" : nome
                 },
                 beforeSend : function(){
-                   //Swal.fire({ showConfirmButton: false,  html: '<h1>Buscando...</h1><br><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span>'});
+                    UIkit.notification({message: 'Buscando...', status: 'success'});
                 }
              }).done(function(dados){ 
                 var data = JSON.parse(dados);
@@ -443,29 +443,17 @@
                                     document.getElementById('t').innerHTML = "";
                                  $('#h').html(""); //limpa html da loja
                                }).fail(function(jqXHR, textStatus, msg){
-                                //erro_net();
+                                UIkit.notification({message: 'Erro de conexão', status: 'danger'});
                             });    
-                            //swal.close();
                           }else {
-//                                 Swal.fire({
-//                                     type: 'error',
-//                                     title: 'Produto não encontrado!',
-//                                     text: ''
-//                                 });
+                            UIkit.notification({message: 'Produto não encontrado', status: 'danger'});
                             }
                         }).fail(function(jqXHR, textStatus, msg){
-                   // erro_net();
+                     UIkit.notification({message: 'Erro de conexão', status: 'danger'});
                 }); 
             }
 
-//             function erro_net () 
-//             {
-//                 Swal.fire({
-//                 type: 'error',
-//                 title: 'conecte-se a uma rede!',
-//                 text: 'Você esta off-line'
-//                 });
-//             }
+
         
         
         </script>
