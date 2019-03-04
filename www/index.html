@@ -364,14 +364,18 @@
       $(document).ready(function() {
           
       $('#produto').css({'display':'none'});
-            $.ajax({
+          $.ajax({
                 url : "http://files.cetromaquinas.com.br/arquivos/php_app_vendas/request_app.php",
                 type : 'post',
                 data : {
                     "S":"SelectProduto"
                 },
-            }).done(function(msg){
-                   alert(msg);   
+         beforeSend : function(){
+            alert('enviando requisicao...');
+         }
+    })
+    .done(function(msg){
+                alert(msg);   
 //                 var esportes = "";
 //                 var prod = JSON.parse(msg);
 //                 var complet = '';
@@ -383,11 +387,11 @@
 //                 $("#nome_prod").autocomplete({
 //                     source: complet
 //                 });
-            }).fail(function(jqXHR, textStatus, msg){  
-//                 erro_net();
-            });   
-            
-        
+    })
+    .fail(function(jqXHR, textStatus, msg){
+         alert(msg);
+    }); 
+              
         });
       
         function busca_prod() 
