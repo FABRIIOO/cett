@@ -375,7 +375,8 @@
                 for (var i = 0; i<prod.length; i++) { 
                     complet += prod[i].nome+',';   
                 }  
-                complet = complet.split(',');   
+                complet = complet.split(','); 
+                   alert(complet);
                 $("#nome_prod" ).autocomplete({
                     source: complet
                 });
@@ -445,11 +446,11 @@
                             });    
                             // swal.close();
                           }else {
-                                Swal.fire({
-                                    type: 'error',
-                                    title: 'Produto não encontrado!',
-                                    text: ''
-                                });
+//                                 Swal.fire({
+//                                     type: 'error',
+//                                     title: 'Produto não encontrado!',
+//                                     text: ''
+//                                 });
                             }
                         }).fail(function(jqXHR, textStatus, msg){
                     // erro_net();
