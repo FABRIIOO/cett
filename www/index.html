@@ -387,7 +387,7 @@
                         source: complet
                     });
                 }) .fail(function(jqXHR, textStatus, msg){
-              alert(msg);
+                 erro_net();
             });   
         });
 
@@ -416,7 +416,6 @@
                             url : data[0].url,
                             type : 'get'
                         }).done(function(dados){
-                            alert(dados);
                             document.getElementById('t').innerHTML = dados;
                             $('#nome_produto').html($('h1.nome-produto.titulo.cor-secundaria').html());
                             $('#parcelas').html('<span>12x</span><small>de</small><span>'+$('strong.cor-principal.titulo').html()+'</span>');         
