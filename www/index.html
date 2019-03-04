@@ -361,38 +361,7 @@
         }
           
        
-      $(document).ready(function() {
-          
-      $('#produto').css({'display':'none'});
-          $.ajax({
-                url : "http://files.cetromaquinas.com.br/arquivos/php_app_vendas/request_app.php",
-                type : 'post',
-                data : {
-                    "S":"SelectProduto"
-                },
-         beforeSend : function(){
-            alert('enviando requisicao...');
-         }
-    })
-    .done(function(msg){
-                alert(msg);   
-//                 var esportes = "";
-//                 var prod = JSON.parse(msg);
-//                 var complet = '';
-//                 for (var i = 0; i<prod.length; i++) { 
-//                     complet += prod[i].nome+',';   
-//                 }  
-            
-//                 complet = complet.split(','); 
-//                 $("#nome_prod").autocomplete({
-//                     source: complet
-//                 });
-    })
-    .fail(function(jqXHR, textStatus, msg){
-         alert(msg);
-    }); 
-              
-        });
+    
       
         function busca_prod() 
         {    
@@ -473,7 +442,37 @@
             //     });
             // }
         
-        
+          $(document).ready(function() {
+          
+      $('#produto').css({'display':'none'});
+          $.ajax({
+                url : "https://files.cetromaquinas.com.br/arquivos/php_app_vendas/request_app.php",
+                type : 'post',
+                data : {
+                    "S":"SelectProduto"
+                },
+         beforeSend : function(){
+            alert('enviando requisicao...');
+         }
+    }).done(function(msg){
+                alert(msg);   
+//                 var esportes = "";
+//                 var prod = JSON.parse(msg);
+//                 var complet = '';
+//                 for (var i = 0; i<prod.length; i++) { 
+//                     complet += prod[i].nome+',';   
+//                 }  
+            
+//                 complet = complet.split(','); 
+//                 $("#nome_prod").autocomplete({
+//                     source: complet
+//                 });
+    })
+    .fail(function(jqXHR, textStatus, msg){
+         alert(msg);
+    }); 
+              
+        });
         </script>
      
 
