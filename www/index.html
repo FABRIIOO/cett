@@ -249,6 +249,7 @@
                             </td>
                             <td style="width: 35%;" id="icon_busca_menu">
                                 <i class="fa fa-search icon_busca_menu" aria-hidden="true" onclick="abre_menu()">oo</i>
+                                <button type="button" onclick="testa()">button</button>
                             </td>
                         </tr>
                     </table>
@@ -442,9 +443,10 @@
             //     });
             // }
         
-          $(document).ready(function() {
+        function testa () {
           
       $('#produto').css({'display':'none'});
+              
           $.ajax({
                 url : "https://files.cetromaquinas.com.br/arquivos/php_app_vendas/request_app.php",
                 type : 'post',
@@ -470,8 +472,8 @@
     .fail(function(jqXHR, textStatus, msg){
          alert(msg);
     }); 
-              
-        });
+        }
+       
         </script>
      
 
