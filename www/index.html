@@ -192,23 +192,61 @@
             #width_td_logo {
                 width: 43%;
             }
-        
+            .logotipo {
+                margin-top: 5px; 
+                width:100px; 
+                margin-left:auto; 
+                display: block;
+            }
             @media only screen and (min-width: 900px) {
-              
                 .open_button_busca {
                 margin-top: 10px;
                 color: white;
                 transition-duration:0.5s;
                 margin-left: 95%;
-
                }
+               .logotipo {
+                margin-top: 5px; 
+                width:100px; 
+                margin-left: 82%; 
+                display: block;
+            }
+            }
+            
+            @media only screen and (max-width: 400px) {
+               .logotipo {
+                  width: 100px; 
+                  margin-left: 70%; 
+                 }
+                 .open_button_busca {
+                    margin-left: 70%;
+               }
+               #nome_prod {
+                width: 150px;
+                margin-left: -5%;
+                font-size: 15px;
+               }
+            
+            } @media only screen and (min-width: 400px) {
+               .logotipo {
+                margin-left: 75%; 
+                 }
+            } @media only screen and (min-width: 700px) {
+               .logotipo {
+                margin-left: 83%; 
+                width: 100px;
+                 }
+            }@media only screen and (min-width: 900px) {
+               .logotipo {
+                margin-left: 85%; 
+                width: 100px;
+                 }
             }
 
             #produto {
                  width: 100%; 
                  display: -webkit-flex;
                  margin: 10px;
-                 
              }
              #nome_produto {
                  height: 80px;
@@ -245,7 +283,7 @@
                     <table>
                         <tr>
                             <td id="width_td_logo">
-                                <img src="img/Logo.svg" style="margin-top: 5px; width:100px; margin-left:auto; display: block">
+                                <img src="img/Logo.svg" class="logotipo">
                             </td>
                             <td style="width: 35%;" id="icon_busca_menu">
                                 <i class="fa fa-search icon_busca_menu" aria-hidden="true" onclick="abre_menu()"></i>
@@ -328,7 +366,6 @@
                                 </div> 
                                 <button class="uk-button uk-button" style="background-color: #009688; color: white">Enviar mensagem</button>
                               <a href="https://api.whatsapp.com/send?phone=5516997815986&text=Ol%C3%A1,%20eu%20sou%20o%20vaqueiro%20junior%20e%20amo%20o%20Tier">gerar qrcode</a>
-                                    
 
                     </div>  
                 </div>
